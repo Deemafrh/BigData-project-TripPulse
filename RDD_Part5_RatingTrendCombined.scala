@@ -1,8 +1,6 @@
 // 3.5 Rating + Trend Combined Analysis
-// Student 5 (Ghada) - finds businesses that are both highly rated AND growing
-// faster than their metro ("rising stars"), and checks whether highly rated
-// businesses grow more than businesses in general.
-//
+
+
 // Input (Phase 2, Transformed Data):
 //   business_features      -> one row per business: name, metro, rating_in_data, reviews_in_data
 //   checkin_trend_features -> one row per business per month: trend_vs_metro
