@@ -1,8 +1,3 @@
-// IT 462 - Big Data Systems | TripPulse
-// Phase 4 - SQL Operations
-// Section: Metro & Category Performance
-// Student 1
-
 java.util.Locale.setDefault(java.util.Locale.US)
 
 val BASE = sys.env.getOrElse(
@@ -10,12 +5,11 @@ val BASE = sys.env.getOrElse(
   "/Users/renadalowais/Library/CloudStorage/GoogleDrive-renad.alowais0@gmail.com/.tmp/17817/business_features"
 )
 
-val MIN_BUSINESSES = 50  // HAVING threshold: ignore categories with too few businesses to trust the average
+val MIN_BUSINESSES = 50
 
 val businessDF = spark.read.parquet(BASE)
 businessDF.createOrReplaceTempView("business_features")
 
-// Explode the comma-separated categories string into one row per (business, category)
 val businessCategoriesDF = spark.sql("""
   SELECT business_id, metro, stars, review_count,
          trim(category) AS category
